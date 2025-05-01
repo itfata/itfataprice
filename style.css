@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(270deg, #00f, #0ff, #f0f, #ff69b4);
+    background-size: 800% 800%;
+    animation: gradient 10s linear infinite;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  img.logo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #fff;
+  }
+
+  .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+    margin-bottom: 30px;
+  }
+
+  .price-list {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(50, 0, 80, 0.4));
+    border-radius: 25px;
+    padding: 30px 40px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.2s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .course-block {
+    margin: 25px 0;
+  }
+
+  .course-name {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .course-price {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+
+  .course-note {
+    font-size: 15px;
+    color: #ccc;
+    margin-top: 2px;
+  }
