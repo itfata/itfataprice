@@ -118,24 +118,38 @@ img.logo {
   color: #ddd;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   body {
     padding: 40px 20px;
     height: auto;
+    display: block;
+  }
+
+  img.logo {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 20px;
   }
 
   .subtitle {
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 20px;
   }
 
   .price-list {
     padding: 25px 20px;
     max-width: 100%;
+    width: 100%;
+    border-radius: 20px;
   }
 
   h1 {
-    font-size: 24px;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .course-block {
+    margin: 20px 0;
   }
 
   .course-name {
@@ -152,11 +166,6 @@ img.logo {
 
   .course-description, .module-list {
     font-size: 15px;
-    line-height: 1.5;
-  }
-
-  img.logo {
-    width: 100px;
-    height: 100px;
+    text-align: left;
   }
 }
