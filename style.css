@@ -1,84 +1,119 @@
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(270deg, #00f, #0ff, #f0f, #ff69b4);
-    background-size: 800% 800%;
-    animation: gradient 10s linear infinite;
-    color: white;
-    text-align: center;
-    padding: 20px;
-  }
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(270deg, #00f, #0ff, #f0f, #ff69b4);
+  background-size: 800% 800%;
+  animation: gradient 10s linear infinite;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
 
-  @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-  img.logo {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 4px solid #fff;
-  }
+img.logo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #fff;
+}
 
-  .subtitle {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    font-weight: 600;
-    color: #ffffff;
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
-    margin-bottom: 30px;
-  }
+.subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  margin-bottom: 40px;
+}
 
-  .price-list {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(50, 0, 80, 0.4));
-    border-radius: 25px;
-    padding: 30px 40px;
-    max-width: 420px;
-    width: 100%;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1.2s ease-out forwards;
-  }
+.course-section {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 30px 0;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+}
 
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+.course-section h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
 
-  h1 {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
+.course-description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
 
-  .course-block {
-    margin: 25px 0;
-  }
+.module-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
 
-  .course-name {
-    font-size: 20px;
-    font-weight: 600;
-  }
+.module-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
 
-  .course-price {
-    font-size: 18px;
-    margin-top: 5px;
-  }
+.module-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00ffee;
+  font-weight: bold;
+}
 
-  .course-note {
-    font-size: 15px;
-    color: #ccc;
-    margin-top: 2px;
-  }
+.price-section {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 30px 0;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.price-section h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.price-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.price-card .course-name {
+  font-size: 20px;
+}
+
+.price-card .course-price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.price-card .course-note {
+  font-size: 14px;
+  color: #ddd;
+}
