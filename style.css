@@ -117,3 +117,46 @@ img.logo {
   font-size: 14px;
   color: #ddd;
 }
+
+@media (max-width: 768px) {
+  body {
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .subtitle {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .price-list {
+    padding: 25px 20px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .course-name {
+    font-size: 18px;
+  }
+
+  .course-price {
+    font-size: 16px;
+  }
+
+  .course-note {
+    font-size: 14px;
+  }
+
+  .course-description, .module-list {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  img.logo {
+    width: 100px;
+    height: 100px;
+  }
+}
