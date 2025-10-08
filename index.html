@@ -1,90 +1,111 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Курси програмування</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Курси програмування | Elite Code Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-  <img src="erasebg-transformed.png" alt="Логотип" class="logo">
-  <div class="subtitle">Онлайн-курси з підтримкою та без</div>
+    <header class="main-header">
+        <img src="erasebg-transformed.png" alt="Логотип Elite Code Academy" class="logo">
+        <h1 class="site-title">Elite Code Academy</h1>
+        <p class="subtitle">Онлайн-курси з підтримкою та без. Ваш шлях у світ IT!</p>
+    </header>
 
-  <!-- Python Курс -->
-  <div class="course-section">
-    <h2>Курс Python Основи</h2>
-    <p class="course-description">
-      Курс складається з 22 модулів для повного занурення в Python.
-      Ти навчаєшся під наглядом ментора, який допомагає і відповідає на всі питання.
-      Після проходження курсу ти створиш свою першу міні-гру! Доступ до матеріалів — на 6 місяців.
-    </p>
-    <ul class="module-list">
-      <li>Вступ до Python та встановлення редакторів</li>
-      <li>Арифметичні операції</li>
-      <li>Рядки</li>
-      <li>Змінні</li>
-      <li>Глибше про рядки</li>
-      <li>Основи функцій</li>
-      <li>Умовний оператор if-else</li>
-      <li>Цикл for</li>
-      <li>Цикл while</li>
-      <li>Списки</li>
-      <li>Функції</li>
-      <li>Логічний тип</li>
-      <li>Словник</li>
-      <li>Кортежі та множини</li>
-      <li>Обробка винятків</li>
-      <li>Файли в Python</li>
-      <li>Модулі та імпорти</li>
-      <li>Лямбда-функції</li>
-      <li>Генератори списків</li>
-      <li>Бібліотека random</li>
-      <li>Математичні операції та модуль math</li>
-      <li>Створення гри</li>
-    </ul>
-  </div>
+    <section class="course-section python-course">
+        <div class="course-header">
+            <h2 class="course-title">Курс Python Основи</h2>
+            <p class="course-slogan">Від новачка до створення власної гри!</p>
+        </div>
+        <p class="course-description">
+            Цей комплексний курс складається з 22 інтенсивних модулів, розроблених для повного занурення у світ Python.
+            Ви будете навчатися під пильним наглядом досвідченого ментора, який надасть індивідуальну підтримку
+            та вичерпні відповіді на всі ваші запитання. Після успішного завершення курсу ви створите свою першу
+            функціональну міні-гру, застосовуючи набуті знання на практиці!
+            Доступ до всіх навчальних матеріалів надається на 6 місяців, що дозволить вам навчатися у власному темпі.
+        </p>
+        <div class="module-grid">
+            <div class="module-item">Вступ до Python та встановлення редакторів</div>
+            <div class="module-item">Арифметичні операції</div>
+            <div class="module-item">Рядки та їх обробка</div>
+            <div class="module-item">Робота зі змінними</div>
+            <div class="module-item">Поглиблене вивчення рядків</div>
+            <div class="module-item">Основи функцій</div>
+            <div class="module-item">Умовний оператор if-else</div>
+            <div class="module-item">Цикл for: ітерації та колекції</div>
+            <div class="module-item">Цикл while: гнучке повторення</div>
+            <div class="module-item">Списки: основи та просунуті техніки</div>
+            <div class="module-item">Функції: створення та використання</div>
+            <div class="module-item">Логічний тип даних</div>
+            <div class="module-item">Словники: ефективне зберігання даних</div>
+            <div class="module-item">Кортежі та множини</div>
+            <div class="module-item">Обробка винятків та помилок</div>
+            <div class="module-item">Робота з файлами в Python</div>
+            <div class="module-item">Модулі та імпорти: структурування коду</div>
+            <div class="module-item">Лямбда-функції: швидкі рішення</div>
+            <div class="module-item">Генератори списків</div>
+            <div class="module-item">Бібліотека random: випадковість у коді</div>
+            <div class="module-item">Математичні операції та модуль math</div>
+            <div class="module-item">Фінальний проект: Створення власної гри</div>
+        </div>
+        <div class="price-section">
+            <h3 class="price-title">Інвестиція у ваше майбутнє:</h3>
+            <div class="price-cards-wrapper">
+                <div class="price-card glow-on-hover">
+                    <div class="course-name">Python Full Support</div>
+                    <div class="course-price">3500 <span class="currency">грн</span></div>
+                    <div class="course-note">з ментором та персональною підтримкою</div>
+                    <button class="buy-button">Записатися</button>
+                </div>
+                <div class="price-card glow-on-hover">
+                    <div class="course-name">Python Self-Study</div>
+                    <div class="course-price">1800 <span class="currency">грн</span></div>
+                    <div class="course-note">доступ до матеріалів без ментора</div>
+                    <button class="buy-button">Записатися</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="price-section">
-    <h3>Вартість:</h3>
-    <div class="price-card">
-      <div class="course-name">Python</div>
-      <div class="course-price">3500 грн</div>
-      <div class="course-note">з ментором</div>
-    </div>
-    <div class="price-card">
-      <div class="course-name">Python</div>
-      <div class="course-price">1800 грн</div>
-      <div class="course-note">без ментора</div>
-    </div>
-  </div>
+    <section class="course-section html-css-course">
+        <div class="course-header">
+            <h2 class="course-title">Курс HTML/CSS Основи</h2>
+            <p class="course-slogan">Створіть свій перший професійний сайт!</p>
+        </div>
+        <p class="course-description">
+            Курс "Основи HTML/CSS" — це ідеальна стартова точка для тих, хто мріє навчитися створювати красиві та функціональні веб-сайти з нуля.
+            Навчання включає захоплюючі відеоуроки з детальними поясненнями, додаткові навчальні матеріали та практичні домашні завдання,
+            що допоможуть закріпити отримані знання. Ми проводимо щотижневі онлайн-зустрічі для обговорення прогресу та відповідей на ваші запитання.
+            Ваша підтримка також забезпечується через інтерактивний чат-бот. Протягом курсу ви розробите власний повноцінний сайт,
+            і ми гарантуємо всебічну допомогу на кожному етапі! Доступ до матеріалів — 6 місяців.
+        </p>
+        <div class="price-section">
+            <h3 class="price-title">Вартість курсу:</h3>
+            <div class="price-cards-wrapper">
+                <div class="price-card glow-on-hover">
+                    <div class="course-name">HTML/CSS Pro</div>
+                    <div class="course-price">2900 <span class="currency">грн</span></div>
+                    <div class="course-note">з ментором та щотижневими зустрічами</div>
+                    <button class="buy-button">Записатися</button>
+                </div>
+                <div class="price-card glow-on-hover">
+                    <div class="course-name">HTML/CSS Basic</div>
+                    <div class="course-price">1300 <span class="currency">грн</span></div>
+                    <div class="course-note">доступ до матеріалів та чат-бота</div>
+                    <button class="buy-button">Записатися</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- HTML/CSS Курс -->
-  <div class="course-section">
-    <h2>Курс HTML/CSS Основи</h2>
-    <p class="course-description">
-      Основи HTML/CSS — це практичний курс для тих, хто хоче навчитися створювати сайти з нуля.
-      Всередині: відеоуроки з поясненнями, матеріали та домашні завдання. Щотижнева зустріч онлайн,
-      чат-бот для підтримки і допомоги. На курсі ви створите власний сайт, ми допоможемо на кожному кроці!
-      Доступ до матеріалів — 6 місяців.
-    </p>
-  </div>
-
-  <div class="price-section">
-    <h3>Вартість:</h3>
-    <div class="price-card">
-      <div class="course-name">HTML/CSS</div>
-      <div class="course-price">2900 грн</div>
-      <div class="course-note">з ментором</div>
-    </div>
-    <div class="price-card">
-      <div class="course-name">HTML/CSS</div>
-      <div class="course-price">1300 грн</div>
-      <div class="course-note">без ментора</div>
-    </div>
-  </div>
+    <footer class="main-footer">
+        <p>&copy; 2023 Elite Code Academy. Всі права захищено.</p>
+        <p>Навчання, що відкриває нові горизонти.</p>
+    </footer>
 
 </body>
 </html>
