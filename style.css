@@ -1,134 +1,304 @@
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(270deg, #00f, #0ff, #f0f, #ff69b4);
-  background-size: 800% 800%;
-  animation: gradient 10s linear infinite;
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
+root {
+    --primary-gradient-start: #6a11cb;
+    --primary-gradient-end: #2575fc;
+    --secondary-gradient-start: #fc00ff;
+    --secondary-gradient-end: #00dbde;
+    --text-color-light: #e0e0e0;
+    --text-color-dark: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --shadow-light: rgba(0, 0, 0, 0.4);
+    --shadow-dark: rgba(0, 0, 0, 0.7);
+    --hover-glow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.4);
 }
 
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(270deg, var(--primary-gradient-start), var(--primary-gradient-end), var(--secondary-gradient-start), var(--secondary-gradient-end));
+    background-size: 800% 800%;
+    animation: gradientAnimation 15s ease infinite;
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 40px 20px;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll from gradient animation */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Styling */
+.main-header {
+    margin-bottom: 50px;
+    padding: 20px 0;
 }
 
 img.logo {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 4px solid #fff;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid var(--text-color-dark);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img.logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+}
+
+.site-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5em; /* Larger title */
+    font-weight: 700;
+    color: var(--text-color-dark);
+    letter-spacing: 2px;
+    text-shadow: 0 4px 8px var(--shadow-dark);
+    margin-bottom: 10px;
 }
 
 .subtitle {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 1px;
-  margin-bottom: 35px;
-  position: relative;
-  display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--text-color-light);
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
 }
 
 .subtitle::after {
-  content: '';
-  display: block;
-  width: 60%;
-  height: 3px;
-  background: #ffffff;
-  margin: 10px auto 0;
-  border-radius: 2px;
-  opacity: 0.7;
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--text-color-dark);
+    margin: 10px auto 0;
+    border-radius: 2px;
+    opacity: 0.8;
 }
 
-
+/* Course Section Styling */
 .course-section {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 30px;
-  margin: 30px 0;
-  max-width: 800px;
-  width: 100%;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(8px);
+    background: var(--card-bg);
+    border-radius: 25px;
+    padding: 40px;
+    margin: 30px 0;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 10px 30px var(--shadow-dark);
+    backdrop-filter: blur(12px); /* Glass effect */
+    border: 1px solid var(--card-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.course-section h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  font-weight: 700;
+.course-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--shadow-dark);
+}
+
+.course-header {
+    margin-bottom: 25px;
+}
+
+.course-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: var(--text-color-dark);
+    margin-bottom: 10px;
+    text-shadow: 0 3px 6px var(--shadow-dark);
+}
+
+.course-slogan {
+    font-size: 1.2em;
+    color: var(--text-color-light);
+    font-style: italic;
+    opacity: 0.9;
 }
 
 .course-description {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: var(--text-color-light);
 }
 
-.module-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: left;
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    text-align: left;
+    margin-bottom: 40px;
 }
 
-.module-list li {
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 12px;
-  font-size: 16px;
+.module-item {
+    position: relative;
+    padding: 15px 20px 15px 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    font-size: 1em;
+    color: var(--text-color-light);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.module-list li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #00ffee;
-  font-weight: bold;
+.module-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateX(5px);
 }
 
+.module-item::before {
+    content: "🚀"; /* Modern emoji icon */
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4em;
+    line-height: 1;
+}
+/* For HTML/CSS course, change icon */
+.html-css-course .module-item::before {
+    content: "✨";
+}
+
+
+/* Price Section Styling */
 .price-section {
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
-  padding: 30px;
-  margin: 30px 0;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.3); /* Slightly darker for contrast */
+    border-radius: 20px;
+    box-shadow: 0 8px 25px var(--shadow-dark);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.price-section h3 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  font-weight: 600;
+.price-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: var(--text-color-dark);
+}
+
+.price-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
 .price-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 20px;
-  margin: 15px 0;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 30px;
+    min-width: 280px;
+    max-width: 350px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 6px 20px var(--shadow-dark);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.price-card.glow-on-hover:hover {
+    box-shadow: var(--hover-glow);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .price-card .course-name {
-  font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-color-dark);
+    text-transform: uppercase;
 }
 
 .price-card .course-price {
-  font-size: 20px;
-  font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #00ffee; /* Highlight price */
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.price-card .currency {
+    font-size: 0.6em;
+    vertical-align: super;
+    font-weight: 500;
 }
 
 .price-card .course-note {
-  font-size: 14px;
-  color: #ddd;
+    font-size: 0.95em;
+    color: #cccccc;
+    margin-bottom: 25px;
+    font-style: italic;
+    flex-grow: 1; /* Pushes button to bottom */
+    display: flex;
+    align-items: center;
 }
+
+.buy-button {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.buy-button:hover {
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    box-shadow: 0 6px 20px rgba(0, 114, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+/* Footer Styling */
+.main-footer {
+    margin-top: 60px;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+    width: 100%;
+}
+
+.main-footer p {
+    margin-bottom: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .site
