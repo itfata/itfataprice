@@ -1,507 +1,295 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Курси програмування | Elite Code Academy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <style>
-        :root {
-            --primary-gradient-start: #6a11cb;
-            --primary-gradient-end: #2575fc;
-            --secondary-gradient-start: #fc00ff;
-            --secondary-gradient-end: #00dbde;
-            --text-color-light: #e0e0e0;
-            --text-color-dark: #ffffff;
-            --card-bg: rgba(255, 255, 255, 0.08);
-            --card-border: rgba(255, 255, 255, 0.2);
-            --shadow-light: rgba(0, 0, 0, 0.4);
-            --shadow-dark: rgba(0, 0, 0, 0.7);
-            --hover-glow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.4);
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Курси програмування | Elite Code Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<style>
+:root {
+    --text-color-light: #e0e0e0;
+    --text-color-dark: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.7);
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+* { box-sizing: border-box; margin:0; padding:0; }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(270deg, var(--primary-gradient-start), var(--primary-gradient-end), var(--secondary-gradient-start), var(--secondary-gradient-end));
-            background-size: 800% 800%;
-            animation: gradientAnimation 15s ease infinite;
-            color: var(--text-color-light);
-            text-align: center;
-            padding: 40px 20px;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    color: var(--text-color-light);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
 
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        /* Header Styling */
-        .main-header {
-            margin-bottom: 50px;
-            padding: 20px 0;
-        }
+.main-header { margin-bottom: 50px; text-align:center; }
+img.logo {
+    width: 150px; height: 150px; border-radius: 50%;
+    object-fit: cover; margin-bottom: 20px;
+    border: 5px solid var(--text-color-dark);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+img.logo:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(255,255,255,0.7); }
+.site-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em; font-weight:700;
+    color: var(--text-color-dark); letter-spacing: 2px;
+    text-shadow: 0 4px 8px var(--shadow-dark); margin-bottom:10px;
+}
+.subtitle {
+    font-family: 'Montserrat', sans-serif; font-size: 1.3em;
+    color: var(--text-color-light); letter-spacing:0.5px;
+    position: relative; display: inline-block; padding-bottom: 15px;
+}
+.subtitle::after {
+    content: ''; display: block; width: 80px; height: 3px;
+    background: var(--text-color-dark); margin: 10px auto 0;
+    border-radius: 2px; opacity:0.8;
+}
 
-        img.logo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 5px solid var(--text-color-dark);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.course-section {
+    background: var(--card-bg); border-radius:25px; padding:40px;
+    margin: 30px 0; width:100%;
+    box-shadow:0 10px 30px var(--shadow-dark);
+    backdrop-filter: blur(8px); border:1px solid var(--card-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.course-section:hover { transform: translateY(-5px); box-shadow:0 15px 40px var(--shadow-dark); }
 
-        img.logo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
-        }
+.course-title { font-family:'Montserrat',sans-serif; font-size:2em; font-weight:600; color: var(--text-color-dark); margin-bottom:10px; }
+.course-slogan { font-size:1.1em; color:var(--text-color-light); font-style:italic; opacity:0.9; margin-bottom:20px; }
+.course-description { font-size:1em; line-height:1.6; margin-bottom:30px; text-align: center; }
 
-        .site-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3.5em;
-            font-weight: 700;
-            color: var(--text-color-dark);
-            letter-spacing: 2px;
-            text-shadow: 0 4px 8px var(--shadow-dark);
-            margin-bottom: 10px;
-        }
+.module-grid {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:15px;
+    justify-items: center;
+    margin-bottom:40px;
+    width: 100%;
+}
+.module-item {
+    position: relative; padding:15px 20px 15px 50px;
+    background: rgba(255,255,255,0.05); border-radius:10px;
+    font-size:1em; color: var(--text-color-light);
+    border:1px solid rgba(255,255,255,0.15); box-shadow:0 2px 8px rgba(0,0,0,0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+}
+.module-item:hover { background: rgba(255,255,255,0.12); transform: translateX(5px); }
+.module-item::before { content:"🚀"; position:absolute; left:15px; top:50%; transform: translateY(-50%); font-size:1.4em; }
 
-        .subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5em;
-            font-weight: 400;
-            color: var(--text-color-light);
-            letter-spacing: 0.5px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
+.price-section { margin-top:40px; padding:30px; background: rgba(255,255,255,0.05); border-radius:20px; box-shadow:0 8px 25px var(--shadow-dark); backdrop-filter: blur(8px); border:1px solid rgba(255,255,255,0.1); display:flex; flex-direction:column; align-items:center; }
+.price-title { font-family:'Montserrat',sans-serif; font-size:1.8em; margin-bottom:25px; font-weight:600; color: var(--text-color-dark); }
+.price-cards-wrapper { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+.price-card {
+    background: rgba(255,255,255,0.1); border-radius:20px; padding:30px;
+    min-width:280px; max-width:350px; flex:1; display:flex; flex-direction:column;
+    justify-content:space-between; align-items:center;
+    box-shadow:0 6px 20px var(--shadow-dark); border:1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+}
+.price-card:hover { transform: translateY(-8px); box-shadow:0 0 20px rgba(255,255,255,0.5); background: rgba(255,255,255,0.2); }
+.course-name { font-family:'Montserrat',sans-serif; font-size:1.5em; font-weight:600; margin-bottom:15px; color: var(--text-color-dark); text-transform: uppercase; }
+.course-price { font-family:'Montserrat',sans-serif; font-size:2em; font-weight:700; color:#00ffee; margin-bottom:10px; text-shadow:0 0 10px rgba(0,255,255,0.6); }
+.course-note { font-size:0.95em; color:#cccccc; margin-bottom:25px; font-style:italic; flex-grow:1; display:flex; align-items:center; text-align:center; }
+.buy-button { background: linear-gradient(90deg, #444, #111); color:#fff; padding:15px 30px; border:none; border-radius:50px; font-size:1.1em; font-weight:600; cursor:pointer; transition: all 0.3s ease; }
+.buy-button:hover { transform:translateY(-3px); box-shadow:0 5px 20px rgba(255,255,255,0.3); }
 
-        .subtitle::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: var(--text-color-dark);
-            margin: 10px auto 0;
-            border-radius: 2px;
-            opacity: 0.8;
-        }
+.main-footer { margin-top:60px; padding:30px 20px; border-top:1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); font-size:0.9em; width:100%; text-align:center; }
 
-        /* Course Section Styling */
-        .course-section {
-            background: var(--card-bg);
-            border-radius: 25px;
-            padding: 40px;
-            margin: 30px 0;
-            max-width: 900px;
-            width: 100%;
-            box-shadow: 0 10px 30px var(--shadow-dark);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--card-border);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.fade-in { opacity:0; transform:translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
 
-        .course-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px var(--shadow-dark);
-        }
-
-        .course-header {
-            margin-bottom: 25px;
-        }
-
-        .course-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
-            font-weight: 600;
-            color: var(--text-color-dark);
-            margin-bottom: 10px;
-            text-shadow: 0 3px 6px var(--shadow-dark);
-        }
-
-        .course-slogan {
-            font-size: 1.2em;
-            color: var(--text-color-light);
-            font-style: italic;
-            opacity: 0.9;
-        }
-
-        .course-description {
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            color: var(--text-color-light);
-        }
-
-        .module-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            text-align: left;
-            margin-bottom: 40px;
-        }
-
-        .module-item {
-            position: relative;
-            padding: 15px 20px 15px 50px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            font-size: 1em;
-            color: var(--text-color-light);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
-
-        .module-item:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateX(5px);
-        }
-
-        .module-item::before {
-            content: "🚀";
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.4em;
-            line-height: 1;
-        }
-
-        .html-css-course .module-item::before {
-            content: "✨";
-        }
-
-
-        /* Price Section Styling */
-        .price-section {
-            margin-top: 40px;
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            box-shadow: 0 8px 25px var(--shadow-dark);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .price-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2em;
-            margin-bottom: 25px;
-            font-weight: 600;
-            color: var(--text-color-dark);
-        }
-
-        .price-cards-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .price-card {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            padding: 30px;
-            min-width: 280px;
-            max-width: 350px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 6px 20px var(--shadow-dark);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .price-card.glow-on-hover:hover {
-            box-shadow: var(--hover-glow);
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.25);
-        }
-
-        .price-card .course-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8em;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--text-color-dark);
-            text-transform: uppercase;
-        }
-
-        .price-card .course-price {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
-            font-weight: 700;
-            color: #00ffee;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
-        }
-
-        .price-card .currency {
-            font-size: 0.6em;
-            vertical-align: super;
-            font-weight: 500;
-        }
-
-        .price-card .course-note {
-            font-size: 0.95em;
-            color: #cccccc;
-            margin-bottom: 25px;
-            font-style: italic;
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-        }
-
-        .buy-button {
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .buy-button:hover {
-            background: linear-gradient(90deg, #0072ff, #00c6ff);
-            box-shadow: 0 6px 20px rgba(0, 114, 255, 0.6);
-            transform: translateY(-3px);
-        }
-
-        /* Footer Styling */
-        .main-footer {
-            margin-top: 60px;
-            padding: 30px 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9em;
-            width: 100%;
-        }
-
-        .main-footer p {
-            margin-bottom: 8px;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .site-title {
-                font-size: 2.8em;
-            }
-
-            .subtitle {
-                font-size: 1.3em;
-            }
-
-            .course-section {
-                padding: 30px 20px;
-                margin: 20px 0;
-            }
-
-            .course-title {
-                font-size: 2em;
-            }
-
-            .course-slogan {
-                font-size: 1em;
-            }
-
-            .course-description {
-                font-size: 1em;
-            }
-
-            .module-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .module-item {
-                padding: 12px 15px 12px 45px;
-            }
-
-            .price-cards-wrapper {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .price-card {
-                width: 90%;
-                max-width: 350px;
-                margin: 15px 0;
-            }
-
-            .price-card .course-name {
-                font-size: 1.5em;
-            }
-
-            .price-card .course-price {
-                font-size: 2.2em;
-            }
-
-            .buy-button {
-                padding: 12px 25px;
-                font-size: 1em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 20px 10px;
-            }
-
-            .site-title {
-                font-size: 2.2em;
-            }
-
-            .subtitle {
-                font-size: 1.1em;
-            }
-
-            .course-section {
-                padding: 20px 15px;
-            }
-
-            .course-title {
-                font-size: 1.8em;
-            }
-
-            .course-description {
-                font-size: 0.95em;
-            }
-
-            .module-item {
-                font-size: 0.9em;
-            }
-
-            .price-title {
-                font-size: 1.7em;
-            }
-        }
-    </style>
-    </head>
+@media(max-width:768px){ .module-grid{grid-template-columns: 1fr;} .course-section{padding:30px 20px;} .course-title{font-size:1.8em;} .price-card{width:90%; margin:15px 0;} }
+@media(max-width:480px){ body{padding:20px 10px;} .site-title{font-size:2em;} .subtitle{font-size:1.1em;} }
+</style>
+</head>
 <body>
+<div class="container">
 
-    <header class="main-header">
-        <img src="erasebg-transformed.png" alt="Логотип Elite Code Academy" class="logo">
-        <h1 class="site-title">Elite Code Academy</h1>
-        <p class="subtitle">Онлайн-курси з підтримкою та без. Ваш шлях у світ IT!</p>
-    </header>
+<header class="main-header fade-in">
+    <img src="erasebg-transformed.png" alt="Логотип Elite Code Academy" class="logo">
+    <h1 class="site-title">Elite Code Academy</h1>
+    <p class="subtitle">Онлайн-курси з підтримкою та без. Ваш шлях у світ IT!</p>
+</header>
 
-    <section class="course-section python-course">
-        <div class="course-header">
-            <h2 class="course-title">Курс Python Основи</h2>
-            <p class="course-slogan">Від новачка до створення власної гри!</p>
-        </div>
-        <p class="course-description">
-            Цей комплексний курс складається з 22 інтенсивних модулів, розроблених для повного занурення у світ Python.
-            Ви будете навчатися під пильним наглядом досвідченого ментора, який надасть індивідуальну підтримку
-            та вичерпні відповіді на всі ваші запитання. Після успішного завершення курсу ви створите свою першу
-            функціональну міні-гру, застосовуючи набуті знання на практиці!
-            Доступ до всіх навчальних матеріалів надається на 6 місяців, що дозволить вам навчатися у власному темпі.
-        </p>
-        <div class="module-grid">
-            <div class="module-item">Вступ до Python та встановлення редакторів</div>
-            <div class="module-item">Арифметичні операції</div>
-            <div class="module-item">Рядки та їх обробка</div>
-            <div class="module-item">Робота зі змінними</div>
-            <div class="module-item">Поглиблене вивчення рядків</div>
-            <div class="module-item">Основи функцій</div>
-            <div class="module-item">Умовний оператор if-else</div>
-            <div class="module-item">Цикл for: ітерації та колекції</div>
-            <div class="module-item">Цикл while: гнучке повторення</div>
-            <div class="module-item">Списки: основи та просунуті техніки</div>
-            <div class="module-item">Функції: створення та використання</div>
-            <div class="module-item">Логічний тип даних</div>
-            <div class="module-item">Словники: ефективне зберігання даних</div>
-            <div class="module-item">Кортежі та множини</div>
-            <div class="module-item">Обробка винятків та помилок</div>
-            <div class="module-item">Робота з файлами в Python</div>
-            <div class="module-item">Модулі та імпорти: структурування коду</div>
-            <div class="module-item">Лямбда-функції: швидкі рішення</div>
-            <div class="module-item">Генератори списків</div>
-            <div class="module-item">Бібліотека random: випадковість у коді</div>
-            <div class="module-item">Математичні операції та модуль math</div>
-            <div class="module-item">Фінальний проект: Створення власної гри</div>
-        </div>
-        <div class="price-section">
-            <h3 class="price-title">Інвестиція у ваше майбутнє:</h3>
-            <div class="price-cards-wrapper">
-                <div class="price-card glow-on-hover">
-                    <div class="course-name">Python Full Support</div>
-                    <div class="course-price">3500 <span class="currency">грн</span></div>
-                    <div class="course-note">з ментором та персональною підтримкою</div>
-                    <button class="buy-button">Записатися</button>
-                </div>
-                <div class="price-card glow-on-hover">
-                    <div class="course-name">Python Self-Study</div>
-                    <div class="course-price">1800 <span class="currency">грн</span></div>
-                    <div class="course-note">доступ до матеріалів без ментора</div>
-                    <button class="buy-button">Записатися</button>
-                </div>
+<!-- Python курс -->
+<section class="course-section python-course fade-in">
+    <div class="course-header">
+        <h2 class="course-title">Курс Python Основи</h2>
+        <p class="course-slogan">Від новачка до створення власної гри!</p>
+    </div>
+    <p class="course-description">
+        Цей комплексний курс складається з 23 інтенсивних модулів. Ви будете навчатися під пильним наглядом досвідченого ментора. Після завершення курсу ви створите власну функціональну міні-гру!
+    </p>
+    <div class="module-grid">
+        <div class="module-item">Вступ до Python та встановлення редакторів</div>
+        <div class="module-item">Арифметичні операції</div>
+        <div class="module-item">Рядки та їх обробка</div>
+        <div class="module-item">Робота зі змінними</div>
+        <div class="module-item">Поглиблене вивчення рядків</div>
+        <div class="module-item">Основи функцій</div>
+        <div class="module-item">Умовний оператор if-else</div>
+        <div class="module-item">Цикл for: ітерації та колекції</div>
+        <div class="module-item">Цикл while: гнучке повторення</div>
+        <div class="module-item">Списки: основи та просунуті техніки</div>
+        <div class="module-item">Функції: створення та використання</div>
+        <div class="module-item">Логічний тип даних</div>
+        <div class="module-item">Словники: ефективне зберігання даних</div>
+        <div class="module-item">Кортежі та множини</div>
+        <div class="module-item">Обробка винятків та помилок</div>
+        <div class="module-item">Робота з файлами в Python</div>
+        <div class="module-item">Модулі та імпорти</div>
+        <div class="module-item">Лямбда-функції: швидкі рішення</div>
+        <div class="module-item">Генератори списків</div>
+        <div class="module-item">Бібліотека random</div>
+        <div class="module-item">Математичні операції та модуль math</div>
+        <div class="module-item">Фінальний проект: створення гри</div>
+    </div>
+    <div class="price-section fade-in">
+        <h3 class="price-title">Інвестиція у ваше майбутнє:</h3>
+        <div class="price-cards-wrapper">
+            <div class="price-card">
+                <div class="course-name">Python Full Support</div>
+                <div class="course-price">3500 <span class="currency">грн</span></div>
+                <div class="course-note">з ментором та персональною підтримкою</div>
+                <button class="buy-button">Записатися</button>
+            </div>
+            <div class="price-card">
+                <div class="course-name">Python Self-Study</div>
+                <div class="course-price">1800 <span class="currency">грн</span></div>
+                <div class="course-note">доступ до матеріалів без ментора</div>
+                <button class="buy-button">Записатися</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="course-section html-css-course">
-        <div class="course-header">
-            <h2 class="course-title">Курс HTML/CSS Основи</h2>
-            <p class="course-slogan">Створіть свій перший професійний сайт!</p>
-        </div>
-        <p class="course-description">
-            Курс "Основи HTML/CSS" — це ідеальна стартова точка для тих, хто мріє навчитися створювати красиві та функціональні веб-сайти з нуля.
-            Навчання включає захоплюючі відеоуроки з детальними поясненнями, додаткові навчальні матеріали та практичні домашні завдання,
-            що допоможуть закріпити отримані знання. Ми проводимо щотижневі онлайн-зустрічі для обговорення прогресу та відповідей на ваші запитання.
-            Ваша підтримка також забезпечується через інтерактивний чат-бот. Протягом курсу ви розробите власний повноцінний сайт,
-            і ми гарантуємо всебічну допомогу на кожному етапі! Доступ до матеріалів — 6 місяців.
-        </p>
-        <div class="price-section">
-            <h3 class="price-title">Вартість курсу:</h3>
-            <div class="price-cards-wrapper">
-                <div class="price-card glow-on-hover">
-                    <div class="course-name">HTML/CSS Pro</div>
-                    <div class="course-price">2900 <span class="currency">грн</span></div>
-                    <div class="course-note">з ментором та щотижневими зустрічами</div>
-                    <button class="buy-button">Записатися</button>
-                </div>
-                <div class="price-card glow-on-hover">
-                    <div class="course-name">HTML/CSS Basic</div>
-                    <div class="course-price">1300 <span class="currency">грн</span></div>
-                    <div class="course-note">доступ до матеріалів та чат-бота</div>
-                    <button class="buy-button">Записатися</button>
-                </div>
+<!-- HTML/CSS курс -->
+<section class="course-section html-css-course fade-in">
+    <div class="course-header">
+        <h2 class="course-title">Курс Основи HTML/CSS</h2>
+        <p class="course-slogan">Створіть свій перший професійний сайт!</p>
+    </div>
+    <p class="course-description">
+        Курс "Основи HTML/CSS" — це ідеальна стартова точка для тих, хто мріє навчитися створювати красиві та функціональні веб-сайти з нуля. Навчання включає відеоуроки, додаткові матеріали та практичні завдання. Щотижневі онлайн-зустрічі та чат-бот для підтримки. Протягом курсу ви розробите власний повноцінний сайт!
+    </p>
+    <div class="module-grid">
+        <div class="module-item">0 Введение в верстку сайтов. Установка редакторов и обзор инструментов</div>
+        <div class="module-item">1 Из чего состоит сайт?</div>
+        <div class="module-item">2 Ссылки</div>
+        <div class="module-item">3 Разметка текста в HTML, списки</div>
+        <div class="module-item">4 Изображения</div>
+        <div class="module-item">5 Таблицы в HTML</div>
+        <div class="module-item">6 Веб-формы</div>
+        <div class="module-item">7 Форматированный текст CSS</div>
+        <div class="module-item">8 Каскадные таблицы стилей (CSS)</div>
+        <div class="module-item">9 CSS: id и class</div>
+        <div class="module-item">10 Выравнивание текста</div>
+        <div class="module-item">11 Семейство шрифта</div>
+        <div class="module-item">12 Внутренние отступы</div>
+        <div class="module-item">13 Flex-контейнер</div>
+        <div class="module-item">14 Выравнивание элементов внутри контейнера</div>
+        <div class="module-item">15 Цветовая модель RGB</div>
+    </div>
+    <div class="price-section fade-in">
+        <h3 class="price-title">Вартість курсу:</h3>
+        <div class="price-cards-wrapper">
+            <div class="price-card">
+                <div class="course-name">HTML/CSS Pro</div>
+                <div class="course-price">2900 <span class="currency">грн</span></div>
+                <div class="course-note">з ментором та щотижневими зустрічами</div>
+                <button class="buy-button">Записатися</button>
+            </div>
+            <div class="price-card">
+                <div class="course-name">HTML/CSS Basic</div>
+                <div class="course-price">1300 <span class="currency">грн</span></div>
+                <div class="course-note">доступ до матеріалів та чат-бота</div>
+                <button class="buy-button">Записатися</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer class="main-footer">
-        <p>&copy; 2025 Elite Code Academy. Всі права захищено.</p>
-        <p>Навчання, що відкриває нові горизонти.</p>
-    </footer>
+<footer class="main-footer fade-in">
+    <p>&copy; 2025 Elite Code Academy. Всі права захищено.</p>
+    <p>Навчання, що відкриває нові горизонти.</p>
+</footer>
+</div>
 
+<script>
+const faders = document.querySelectorAll('.fade-in');
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.2 });
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+<!-- Модальное окно для выбора чата -->
+<div id="chatModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
+    <div style="background:#111; padding:30px; border-radius:20px; text-align:center; max-width:300px; width:80%;">
+      <h3 style="color:#fff; margin-bottom:20px;">Обери чат</h3>
+      <button onclick="openChat('telegram')" style="margin:10px; padding:10px 20px; border-radius:10px; border:none; cursor:pointer; background:#0088cc; color:white;">Telegram</button>
+      <button onclick="openChat('whatsapp')" style="margin:10px; padding:10px 20px; border-radius:10px; border:none; cursor:pointer; background:#25D366; color:white;">WhatsApp</button>
+      <p style="color:#ccc; margin-top:15px; cursor:pointer;" onclick="closeModal()">Відміна</p>
+    </div>
+  </div>
+  
+  <script>
+  // Показываем модальное окно
+  function showModal() {
+      document.getElementById('chatModal').style.display = 'flex';
+  }
+  
+  // Закрываем модальное окно
+  function closeModal() {
+      document.getElementById('chatModal').style.display = 'none';
+  }
+  
+  // Открываем выбранный чат
+  function openChat(chat) {
+      let link = '';
+      if(chat === 'telegram') {
+          link = 'https://t.me/katyabrifli'; // замените на свой Telegram ник
+      } else if(chat === 'whatsapp') {
+          link = 'https://wa.me/40725245603'; // замените на свой номер в формате 1234567890
+      }
+      window.open(link, '_blank');
+      closeModal();
+  }
+  
+  // Назначаем всем кнопкам с классом .buy-button открытие модального окна
+  document.querySelectorAll('.buy-button').forEach(btn => {
+      btn.addEventListener('click', showModal);
+  });
+  </script>
+  
 </body>
 </html>
