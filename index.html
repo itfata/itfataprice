@@ -131,6 +131,24 @@ img.logo:hover {
 
 @media(max-width:768px){ .module-grid{grid-template-columns: 1fr;} .course-section{padding:30px 20px;} .course-title{font-size:1.8em;} .price-card{width:90%; margin:15px 0;} }
 @media(max-width:480px){ body{padding:20px 10px;} .site-title{font-size:2em;} .subtitle{font-size:1.1em;} }
+.original-price { 
+    text-decoration: line-through; 
+    color: #ff6b81;          /* нежный розовый для зачёркнутой цены */
+    font-size: 1.3em; 
+    margin-right: 10px; 
+}
+
+.discount { 
+    font-size: 1.7em; 
+    font-weight: 700; 
+    background: linear-gradient(45deg, #c39eff, #f5b3ff); /* пастельный фиолетово-розовый градиент */
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    text-shadow: 0 0 10px rgba(243, 200, 255, 0.7), 0 0 20px rgba(243, 200, 255, 0.5); /* лёгкое свечение */
+}
+
+
+
 </style>
 </head>
 <body>
@@ -180,13 +198,21 @@ img.logo:hover {
         <div class="price-cards-wrapper">
             <div class="price-card">
                 <div class="course-name">Python Full Support</div>
-                <div class="course-price">3500 <span class="currency">грн</span></div>
+                <div class="course-price">
+                    <span class="original-price">3500 грн</span>
+                    <span class="discount">2800 грн (-20%)</span>
+                </div>
+                
                 <div class="course-note">з ментором та персональною підтримкою</div>
                 <button class="buy-button">Записатися</button>
             </div>
             <div class="price-card">
                 <div class="course-name">Python Self-Study</div>
-                <div class="course-price">1800 <span class="currency">грн</span></div>
+                <div class="course-price">
+                    <span class="original-price">1800 грн</span>
+                    <span class="discount">1440 грн (-20%)</span>
+                </div>
+                
                 <div class="course-note">доступ до матеріалів без ментора</div>
                 <button class="buy-button">Записатися</button>
             </div>
@@ -226,13 +252,21 @@ img.logo:hover {
         <div class="price-cards-wrapper">
             <div class="price-card">
                 <div class="course-name">HTML/CSS Pro</div>
-                <div class="course-price">2900 <span class="currency">грн</span></div>
+                <div class="course-price">
+                    <span class="original-price">2900 грн</span>
+                    <span class="discount">2320 грн (-20%)</span>
+                </div>
+                
                 <div class="course-note">з ментором та щотижневими зустрічами</div>
                 <button class="buy-button">Записатися</button>
             </div>
             <div class="price-card">
                 <div class="course-name">HTML/CSS Basic</div>
-                <div class="course-price">1300 <span class="currency">грн</span></div>
+                <div class="course-price">
+                    <span class="original-price">1300 грн</span>
+                    <span class="discount">1040 грн (-20%)</span>
+                </div>
+                
                 <div class="course-note">доступ до матеріалів та чат-бота</div>
                 <button class="buy-button">Записатися</button>
             </div>
