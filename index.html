@@ -156,9 +156,12 @@ img.logo:hover {
 
 <header class="main-header fade-in">
     <img src="ECA.jpeg"Логотип Elite Code Academy" class="logo">
+    
+
     <h1 class="site-title">Elite Code Academy</h1>
     <p class="subtitle">Онлайн-курси з підтримкою та без. Ваш шлях у світ IT!</p>
 </header>
+
 
 <!-- Python курс -->
 <section class="course-section python-course fade-in">
@@ -274,8 +277,102 @@ img.logo:hover {
     </div>
 </section>
 
+<!-- ===== Истории наших учеников ===== -->
+<section class="student-stories">
+    <h2 class="stories-title">Історії наших учнів</h2>
+    <div class="stories-container">
+      <div class="story-card">
+        <p class="story-text">Дуже сподобався курс! Було зрозуміло як і що робити. В майбутньому я би хотіла звʼязати свій шлях з цим. Дякую!</p>
+        <span class="story-author">— Ольга</span>
+      </div>
+      <div class="story-card">
+        <p class="story-text">Вже можу писати маленькі програми швидше та якісніше. Мій логічний та алгоритмічний рівень значно покращився.</p>
+        <span class="story-author">— Андрій</span>
+      </div>
+      <div class="story-card">
+        <p class="story-text">Курс класний, Катерина допомогла розібратись з усіма задачами. Elite Code Academy — найкращий проєкт для вивчення програмування з нуля.</p>
+        <span class="story-author">— Марія</span>
+      </div>
+      <div class="story-card">
+        <p class="story-text">Можу навчатися у своєму темпі — дуже зручно. Все пояснено людською мовою, мотивація зросла.</p>
+        <span class="story-author">— Олександр</span>
+      </div>
+      <div class="story-card">
+        <p class="story-text">Ментор пояснював складні теми доступно, перевіряв завдання та давав поради. Завдяки підтримці я зрозумів Python, та знаю куди далі хочу рухатись!</p>
+        <span class="story-author">—Антон </span>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+  /* ===== Стили Историй учеников ===== */
+  .student-stories {
+    width: 100%;
+    max-width: 1200px;
+    margin: 80px auto;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  .stories-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+  
+  .stories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+  
+  .story-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(200,200,200,0.4); /* серая рамка */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+    border-radius: 25px;
+    padding: 25px 20px;
+    max-width: 300px;
+    flex: 1 1 250px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .story-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.8);
+  }
+  
+  .story-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .story-author {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #ccc;
+  }
+    
+  @media(max-width:768px){
+    .story-card { max-width: 45%; flex: 1 1 45%; }
+  }
+  
+  @media(max-width:480px){
+    .story-card { max-width: 90%; flex: 1 1 90%; }
+  }
+  </style>
+  
 
-    <!-- ===== FOOTER + SOCIAL ICONS ===== -->
+<!-- ===== FOOTER + SOCIAL ICONS ===== -->
 <footer class="main-footer fade-in">
     <p>&copy; 2025 Elite Code Academy. Всі права захищено.</p>
     <p>Навчання, що відкриває нові горизонти.</p>
