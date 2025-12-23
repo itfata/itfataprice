@@ -1,472 +1,492 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title> Elite Code Academy</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="ECA.png" type="image/png">
-<style>
-:root {
-    --text-color-light: #e0e0e0;
-    --text-color-dark: #ffffff;
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --card-border: rgba(255, 255, 255, 0.1);
-    --shadow-dark: rgba(0, 0, 0, 0.7);
-}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elite Code Academy | Твій шлях в IT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="ECA.png" type="image/png">
+    
+    <style>
+        :root {
+            --accent: #00ffee; 
+            --bg: #050505;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --text-dim: #b0b0b0;
+            --text-bright: #ffffff;
+        }
 
-* { box-sizing: border-box; margin:0; padding:0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #000;
-    color: var(--text-color-light);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-}
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-dim);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-.container {
-    max-width: 1000px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-.main-header { margin-bottom: 50px; text-align:center; }
-img.logo {
-    width: 300px;           
-    height: 300px;
-    border-radius: 0;       
-    object-fit: contain;    
-    margin-bottom: 20px;
-    border: none;          
-    box-shadow: none;      
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        /* --- Header --- */
+        .main-header { text-align: center; padding: 60px 0 30px; }
+        
+        /* ЛОГОТИП БІЛЬШЕ */
+        .logo { 
+            width: 280px; 
+            height: auto; 
+            margin-bottom: 15px; 
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .logo:hover { transform: scale(1.1) rotate(2deg); }
 
-img.logo:hover {
-    transform: scale(1.05); 
-}
-.site-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3em; font-weight:700;
-    color: var(--text-color-dark); letter-spacing: 2px;
-    text-shadow: 0 4px 8px var(--shadow-dark); margin-bottom:10px;
-}
-.subtitle {
-    font-family: 'Montserrat', sans-serif; font-size: 1.3em;
-    color: var(--text-color-light); letter-spacing:0.5px;
-    position: relative; display: inline-block; padding-bottom: 15px;
-}
-.subtitle::after {
-    content: ''; display: block; width: 80px; height: 3px;
-    background: var(--text-color-dark); margin: 10px auto 0;
-    border-radius: 2px; opacity:0.8;
-}
+        /* НАЗВА МЕНША */
+        .site-title { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 2.2rem; 
+            color: var(--text-bright); 
+            text-transform: uppercase; 
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+        }
+        .subtitle { font-size: 1.1rem; color: var(--accent); font-weight: 400; opacity: 0.9; }
 
-.course-section {
-    background: var(--card-bg); border-radius:25px; padding:40px;
-    margin: 30px 0; width:100%;
-    box-shadow:0 10px 30px var(--shadow-dark);
-    backdrop-filter: blur(8px); border:1px solid var(--card-border);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-.course-section:hover { transform: translateY(-5px); box-shadow:0 15px 40px var(--shadow-dark); }
+        /* --- Mentor Story Section --- */
+        .mentor-section {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .mentor-image-wrapper { flex: 1; position: relative; }
+        .mentor-image {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 40px;
+            border: 1px solid var(--accent);
+            box-shadow: 0 0 40px rgba(0, 255, 238, 0.15);
+        }
+        .mentor-content { flex: 1.2; }
+        .mentor-content h2 { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 2.3rem; 
+            color: var(--text-bright); 
+            margin-bottom: 25px; 
+        }
+        .mentor-content p { font-size: 1.1rem; margin-bottom: 20px; }
+        .highlight { color: var(--accent); font-weight: 600; }
 
-.course-title { font-family:'Montserrat',sans-serif; font-size:2em; font-weight:600; color: var(--text-color-dark); margin-bottom:10px; }
-.course-slogan { font-size:1.1em; color:var(--text-color-light); font-style:italic; opacity:0.9; margin-bottom:20px; }
-.course-description { font-size:1em; line-height:1.6; margin-bottom:30px; text-align: center; }
+        /* --- Course Section General --- */
+        .course-block { 
+            padding: 80px 40px; 
+            margin: 40px 0;
+            border-radius: 40px;
+            border: 1px solid transparent;
+            transition: all 0.5s ease; 
+        }
 
-.module-grid {
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:15px;
-    justify-items: center;
-    margin-bottom:40px;
-    width: 100%;
-}
-.module-item {
-    position: relative; padding:15px 20px 15px 50px;
-    background: rgba(255,255,255,0.05); border-radius:10px;
-    font-size:1em; color: var(--text-color-light);
-    border:1px solid rgba(255,255,255,0.15); box-shadow:0 2px 8px rgba(0,0,0,0.3);
-    transition: background 0.3s ease, transform 0.2s ease;
-    width: 100%;
-    max-width: 400px;
-    text-align: left;
-}
-.module-item:hover { background: rgba(255,255,255,0.12); transform: translateX(5px); }
-.module-item::before { content:"🚀"; position:absolute; left:15px; top:50%; transform: translateY(-50%); font-size:1.4em; }
+        /* ЕФЕКТ ПРИ НАВЕДЕННІ НА ВЕСЬ КУРС */
+        .course-block:hover {
+            background: rgba(255, 255, 255, 0.02);
+            border-color: rgba(0, 255, 238, 0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
 
-.price-section { margin-top:40px; padding:30px; background: rgba(255,255,255,0.05); border-radius:20px; box-shadow:0 8px 25px var(--shadow-dark); backdrop-filter: blur(8px); border:1px solid rgba(255,255,255,0.1); display:flex; flex-direction:column; align-items:center; }
-.price-title { font-family:'Montserrat',sans-serif; font-size:1.8em; margin-bottom:25px; font-weight:600; color: var(--text-color-dark); }
-.price-cards-wrapper { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
-.price-card {
-    background: rgba(255,255,255,0.1); border-radius:20px; padding:30px;
-    min-width:280px; max-width:350px; flex:1; display:flex; flex-direction:column;
-    justify-content:space-between; align-items:center;
-    box-shadow:0 6px 20px var(--shadow-dark); border:1px solid rgba(255,255,255,0.2);
-    transition: all 0.3s ease;
-}
-.price-card:hover { transform: translateY(-8px); box-shadow:0 0 20px rgba(255,255,255,0.5); background: rgba(255,255,255,0.2); }
-.course-name { font-family:'Montserrat',sans-serif; font-size:1.5em; font-weight:600; margin-bottom:15px; color: var(--text-color-dark); text-transform: uppercase; }
-.course-price { font-family:'Montserrat',sans-serif; font-size:2em; font-weight:700; color:#00ffee; margin-bottom:10px; text-shadow:0 0 10px rgba(0,255,255,0.6); }
-.course-note { font-size:0.95em; color:#cccccc; margin-bottom:25px; font-style:italic; flex-grow:1; display:flex; align-items:center; text-align:center; }
-.buy-button { background: linear-gradient(90deg, #444, #111); color:#fff; padding:15px 30px; border:none; border-radius:50px; font-size:1.1em; font-weight:600; cursor:pointer; transition: all 0.3s ease; }
-.buy-button:hover { transform:translateY(-3px); box-shadow:0 5px 20px rgba(255,255,255,0.3); }
+        .course-header { text-align: center; margin-bottom: 60px; }
+        .course-tag { 
+            background: var(--accent); 
+            color: #000; 
+            padding: 5px 15px; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        .course-title { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 2.8rem; 
+            color: var(--text-bright); 
+            margin: 20px 0; 
+        }
 
-.main-footer { margin-top:60px; padding:30px 20px; border-top:1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); font-size:0.9em; width:100%; text-align:center; }
+        /* --- Modules List --- */
+        .modules-container { max-width: 800px; margin: 0 auto 60px; }
+        .module-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 22px 30px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+        .module-item:hover {
+            border-color: var(--accent);
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .module-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 45px;
+        }
+        .module-info h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text-bright);
+            margin-bottom: 5px;
+        }
+        .module-info p { font-size: 0.9rem; opacity: 0.8; }
 
-.fade-in { opacity:0; transform:translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-.fade-in.visible { opacity:1; transform:translateY(0); }
+        /* --- Certificate --- */
+        .certificate-info {
+            background: linear-gradient(90deg, rgba(0,255,238,0.1), transparent);
+            border-left: 4px solid var(--accent);
+            padding: 25px;
+            border-radius: 0 20px 20px 0;
+            margin: 40px auto;
+            max-width: 800px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-@media(max-width:768px){ .module-grid{grid-template-columns: 1fr;} .course-section{padding:30px 20px;} .course-title{font-size:1.8em;} .price-card{width:90%; margin:15px 0;} }
-@media(max-width:480px){ body{padding:20px 10px;} .site-title{font-size:2em;} .subtitle{font-size:1.1em;} }
-.original-price { 
-    text-decoration: line-through; 
-    color: #ff6b81;          /* нежный розовый для зачёркнутой цены */
-    font-size: 1.3em; 
-    margin-right: 10px; 
-}
+        /* --- Price Cards --- */
+        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .price-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            transition: 0.4s;
+        }
+        .price-card.popular { border-color: var(--accent); background: rgba(0, 255, 238, 0.03); }
+        .current-price { font-size: 2.2rem; font-weight: 700; color: var(--accent); }
+        .old-price { text-decoration: line-through; opacity: 0.5; font-size: 1.1rem; }
+        .price-features { list-style: none; margin: 25px 0; text-align: left; font-size: 0.95rem; }
+        .price-features li { margin-bottom: 10px; }
+        .price-features li::before { content: "✓"; color: var(--accent); margin-right: 10px; }
 
-.discount { 
-    font-size: 1.7em; 
-    font-weight: 700; 
-    background: linear-gradient(45deg, #c39eff, #f5b3ff); /* пастельный фиолетово-розовый градиент */
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-    text-shadow: 0 0 10px rgba(243, 200, 255, 0.7), 0 0 20px rgba(243, 200, 255, 0.5); /* лёгкое свечение */
-}
+        /* КНОПКА З ЕФЕКТОМ */
+        .buy-button {
+            width: 100%;
+            padding: 18px;
+            border-radius: 50px;
+            border: none;
+            background: var(--accent);
+            color: #000;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
+        /* Підсвітка кнопки при наведенні на КАРТКУ або КНОПКУ */
+        .price-card:hover .buy-button, .buy-button:hover {
+            box-shadow: 0 0 25px var(--accent);
+            transform: scale(1.05);
+        }
 
+        /* --- Testimonials --- */
+        .stories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 50px 0; }
+        .story-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 25px;
+            border: 1px solid var(--border);
+        }
+        .story-author { color: var(--accent); font-weight: 600; display: block; margin-top: 15px; }
 
-</style>
+        /* --- Footer --- */
+        .main-footer { padding: 60px 0; text-align: center; border-top: 1px solid var(--border); }
+        .social-links { display: flex; justify-content: center; gap: 25px; margin-top: 25px; }
+        .social-links img { width: 35px; filter: grayscale(1); transition: 0.3s; }
+        .social-links img:hover { filter: grayscale(0); transform: translateY(-5px); }
+
+        /* --- Modal --- */
+        #chatModal { 
+            display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+            background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:1000; 
+            backdrop-filter: blur(10px);
+        }
+        .modal-content { background:#111; padding:40px; border-radius:30px; text-align:center; border: 1px solid var(--accent); width: 90%; max-width: 400px; }
+        .modal-btn { 
+            display: block; width: 100%; margin: 10px 0; padding: 15px; border-radius: 15px; 
+            border: none; cursor: pointer; font-weight: 600; color: white; font-size: 1.1rem;
+        }
+
+        /* --- Animations --- */
+        .fade-in { opacity:0; transform:translateY(30px); transition: 0.8s all ease-out; }
+        .fade-in.visible { opacity:1; transform:translateY(0); }
+
+        @media (max-width: 850px) {
+            .mentor-section { flex-direction: column; text-align: center; }
+            .course-title { font-size: 2.2rem; }
+            .logo { width: 200px; }
+        }
+    </style>
 </head>
 <body>
+
 <div class="container">
+    <header class="main-header fade-in">
+        <img src="ECA.jpeg" alt="Elite Code Academy" class="logo">
+        <h1 class="site-title">Elite Code Academy</h1>
+        <p class="subtitle">Ваш впевнений старт в IT без страху перед математикою</p>
+    </header>
 
-<header class="main-header fade-in">
-    <img src="ECA.jpeg"Логотип Elite Code Academy" class="logo">
-    
+    <section class="mentor-section fade-in">
+        <div class="mentor-image-wrapper">
+            <img src="Katya.jpeg" alt="Катерина - Ментор" class="mentor-image">
+        </div>
+        <div class="mentor-content">
+            <h2>Привіт, я Катерина!</h2>
+            <p>Я ніколи не бачила себе в IT і навіть не дивилась в ту сторону. <span class="highlight">Коли мені було 17, я написала екзамен з математики на 0...</span></p>
+            <p>Жоден університет не хотів мене брати, бо в моїй голові була пустка замість формул. Але моє життя вирішило, що я буду вчитись на айтішника.</p>
+            <p>Сьогодні я викладаю курси та доводжу кожному: <span class="highlight">математика — не вирок.</span> Я пройшла цей шлях з абсолютного нуля до професіонала, і тепер я допоможу тобі зробити так само!</p>
+        </div>
+    </section>
 
-    <h1 class="site-title">Elite Code Academy</h1>
-    <p class="subtitle">Онлайн-курси з підтримкою та без. Ваш шлях у світ IT!</p>
-</header>
+    <section class="course-block fade-in" id="python">
+        <div class="course-header">
+            <span class="course-tag">Найпопулярніший курс</span>
+            <h2 class="course-title">Python Основи</h2>
+            <p>Почни програмувати на найпопулярнішій мові світу</p>
+        </div>
 
-
-<!-- Python курс -->
-<section class="course-section python-course fade-in">
-    <div class="course-header">
-        <h2 class="course-title">Курс Python Основи</h2>
-        <p class="course-slogan">Від новачка до створення власної гри!</p>
-    </div>
-    <p class="course-description">
-        Цей комплексний курс складається з 23 інтенсивних модулів. Ви будете навчатися під пильним наглядом досвідченого ментора. Після завершення курсу ви створите власну функціональну міні-гру!
-    </p>
-    <div class="module-grid">
-        <div class="module-item">Вступ до Python та встановлення редакторів</div>
-        <div class="module-item">Арифметичні операції</div>
-        <div class="module-item">Рядки та їх обробка</div>
-        <div class="module-item">Робота зі змінними</div>
-        <div class="module-item">Поглиблене вивчення рядків</div>
-        <div class="module-item">Основи функцій</div>
-        <div class="module-item">Умовний оператор if-else</div>
-        <div class="module-item">Цикл for: ітерації та колекції</div>
-        <div class="module-item">Цикл while: гнучке повторення</div>
-        <div class="module-item">Списки: основи та просунуті техніки</div>
-        <div class="module-item">Функції: створення та використання</div>
-        <div class="module-item">Логічний тип даних</div>
-        <div class="module-item">Словники: ефективне зберігання даних</div>
-        <div class="module-item">Кортежі та множини</div>
-        <div class="module-item">Обробка винятків та помилок</div>
-        <div class="module-item">Робота з файлами в Python</div>
-        <div class="module-item">Модулі та імпорти</div>
-        <div class="module-item">Лямбда-функції: швидкі рішення</div>
-        <div class="module-item">Генератори списків</div>
-        <div class="module-item">Бібліотека random</div>
-        <div class="module-item">Математичні операції та модуль math</div>
-        <div class="module-item">Фінальний проект: створення гри</div>
-    </div>
-    <div class="price-section fade-in">
-        <h3 class="price-title">Інвестиція у ваше майбутнє:</h3>
-        <div class="price-cards-wrapper">
-            <div class="price-card">
-                <div class="course-name">Python Full Support</div>
-                <div class="course-price">
-                    <span class="original-price">3500 грн</span>
-                    <span class="discount">2800 грн (-20%)</span>
+        <div class="modules-container">
+            <div class="module-item">
+                <div class="module-number">01</div>
+                <div class="module-info">
+                    <h4>Перші кроки</h4>
+                    <p>Встановлення Python та знайомство з редакторами коду VS Code та PyCharm.</p>
                 </div>
-                
-                <div class="course-note">з ментором та персональною підтримкою</div>
+            </div>
+            <div class="module-item">
+                <div class="module-number">02</div>
+                <div class="module-info">
+                    <h4>Основи логіки</h4>
+                    <p>Арифметичні операції, змінні та робота з типами даних.</p>
+                </div>
+            </div>
+            <div class="module-item">
+                <div class="module-number">03</div>
+                <div class="module-info">
+                    <h4>Умови та Цикли</h4>
+                    <p>Як навчити програму приймати рішення (If/Else) та повторювати дії (For/While).</p>
+                </div>
+            </div>
+            <div class="module-item">
+                <div class="module-number">04</div>
+                <div class="module-info">
+                    <h4>Списки та Словники</h4>
+                    <p>Організація великої кількості даних та швидкий пошук по них.</p>
+                </div>
+            </div>
+            <div class="module-item">
+                <div class="module-number">05</div>
+                <div class="module-info">
+                    <h4>Функції та Модулі</h4>
+                    <p>Пишемо професійний код, який можна використовувати повторно.</p>
+                </div>
+            </div>
+            <div class="module-item">
+                <div class="module-number">06</div>
+                <div class="module-info">
+                    <h4>Фінальний проект</h4>
+                    <p>Створення власної міні-гри: від ідеї до робочого файлу.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="certificate-info">
+            <div style="font-size: 2.5rem;">🎓</div>
+            <div>
+                <h4 style="color: #fff; margin-bottom: 5px;">Сертифікат про навчання</h4>
+                <p>По завершенню ти отримаєш іменний сертифікат, що підтверджує твої знання.</p>
+            </div>
+        </div>
+
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>Self-Study</h3>
+                <div class="current-price">1440 грн</div>
+                <div class="old-price">1800 грн</div>
+                <ul class="price-features">
+                    <li>23 модулі відеоуроків</li>
+                    <li>етальна перевірка домашніх завдань</li>
+                    <li>Сертифікат</li>
+                </ul>
                 <button class="buy-button">Записатися</button>
             </div>
-            <div class="price-card">
-                <div class="course-name">Python Self-Study</div>
-                <div class="course-price">
-                    <span class="original-price">1800 грн</span>
-                    <span class="discount">1440 грн (-20%)</span>
-                </div>
-                
-                <div class="course-note">доступ до матеріалів без ментора</div>
+            <div class="price-card popular">
+                <h3>Full Support</h3>
+                <div class="current-price">2800 грн</div>
+                <div class="old-price">3500 грн</div>
+                <ul class="price-features">
+                    <li>аплановані онлайн-зустрічі</li>
+                    <li>Детальна перевірка домашніх завдань</li>
+                    <li>Допомога з фінальним проектом</li>
+                    <li>Сертифікат</li>
+                </ul>
                 <button class="buy-button">Записатися</button>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- HTML/CSS курс -->
-<section class="course-section html-css-course fade-in">
-    <div class="course-header">
-        <h2 class="course-title">Курс Основи HTML/CSS</h2>
-        <p class="course-slogan">Створіть свій перший професійний сайт!</p>
-    </div>
-    <p class="course-description">
-        Курс "Основи HTML/CSS" — це ідеальна стартова точка для тих, хто мріє навчитися створювати красиві та функціональні веб-сайти з нуля. Навчання включає відеоуроки, додаткові матеріали та практичні завдання. Щотижневі онлайн-зустрічі та чат-бот для підтримки. Протягом курсу ви розробите власний повноцінний сайт!
-    </p>
-    <div class="module-grid">
-        <div class="module-item"> Введення у верстку сайтів. Встановлення редакторів та огляд інструментів</div>
-        <div class="module-item"> З чого складається сайт?</div>
-        <div class="module-item"> Посилання </div>
-        <div class="module-item"> Розмітка тексту в HTML, списки</div>
-        <div class="module-item"> Зображення</div>
-        <div class="module-item"> Таблиці в HTML</div>
-        <div class="module-item"> Веб-форми</div>
-        <div class="module-item"> Форматованний  текст CSS</div>
-        <div class="module-item"> Каскадні таблиці стилів (CSS)</div>
-        <div class="module-item"> CSS: id та class</div>
-        <div class="module-item"> Вирівнування тексту</div>
-        <div class="module-item"> Сімейство шрифту</div>
-        <div class="module-item"> Внутрішні відступи</div>
-        <div class="module-item"> Flex-контейнер</div>
-        <div class="module-item"> Вирівнювання елементів усередині контейнера</div>
-        <div class="module-item"> Колірна модель RGB</div>
-    </div>
-    <div class="price-section fade-in">
-        <h3 class="price-title">Вартість курсу:</h3>
-        <div class="price-cards-wrapper">
-            <div class="price-card">
-                <div class="course-name">HTML/CSS Pro</div>
-                <div class="course-price">
-                    <span class="original-price">2900 грн</span>
-                    <span class="discount">2320 грн (-20%)</span>
+    <section class="course-block fade-in" id="html-css">
+        <div class="course-header">
+            <span class="course-tag">Твій перший сайт</span>
+            <h2 class="course-title">HTML/CSS Основи</h2>
+            <p>Навчися створювати інтерфейси, які приносять гроші</p>
+        </div>
+
+        <div class="modules-container">
+            <div class="module-item">
+                <div class="module-number">01</div>
+                <div class="module-info">
+                    <h4>Анатомія сайту</h4>
+                    <p>Структура HTML, робота з текстом, посиланнями та зображеннями.</p>
                 </div>
-                
-                <div class="course-note">з ментором та щотижневими зустрічами</div>
+            </div>
+            <div class="module-item">
+                <div class="module-number">02</div>
+                <div class="module-info">
+                    <h4>Магія стилів CSS</h4>
+                    <p>Селектори, кольори, шрифти та оформлення блоків.</p>
+                </div>
+            </div>
+            <div class="module-item">
+                <div class="module-number">03</div>
+                <div class="module-info">
+                    <h4>Flexbox Layout</h4>
+                    <p>Сучасна побудова сіток та розташування елементів на сторінці.</p>
+                </div>
+            </div>
+            <div class="module-item">
+                <div class="module-number">04</div>
+                <div class="module-info">
+                    <h4>Форми та Інтерактив</h4>
+                    <p>Створення полів вводу, кнопок та збір даних від користувачів.</p>
+                </div>
+            </div>
+            <div class="module-item">
+                <div class="module-number">05</div>
+                <div class="module-info">
+                    <h4>Фінальний проект</h4>
+                    <p>Верстка твого першого професійного адаптивного сайту.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>Basic</h3>
+                <div class="current-price">1040 грн</div>
+                <div class="old-price">1300 грн</div>
+                <ul class="price-features">
+                    <li>Відеолекції та конспекти</li>
+                    <li>Навчання самостійно</li>
+                    <li>Сертифікат</li>
+                </ul>
                 <button class="buy-button">Записатися</button>
             </div>
-            <div class="price-card">
-                <div class="course-name">HTML/CSS Basic</div>
-                <div class="course-price">
-                    <span class="original-price">1300 грн</span>
-                    <span class="discount">1040 грн (-20%)</span>
-                </div>
-                
-                <div class="course-note">доступ до матеріалів та чат-бота</div>
+            <div class="price-card popular">
+                <h3>Pro Support</h3>
+                <div class="current-price">2320 грн</div>
+                <div class="old-price">2900 грн</div>
+                <ul class="price-features">
+                    <li>Заплановані онлайн-зустрічі</li>
+                    <li>Розбір твого коду ментором</li>
+                    <li>Сертифікат</li>
+                </ul>
                 <button class="buy-button">Записатися</button>
             </div>
         </div>
+    </section>
+
+    <section class="fade-in" style="padding: 60px 0;">
+        <h2 style="text-align: center; font-family: 'Montserrat'; font-size: 2.2rem; color: #fff;">Історії успіху</h2>
+        <div class="stories-grid">
+            <div class="story-card">
+                <p>Курс класний, Катерина допомогла розібратись з усіма задачами. Elite Code Academy — найкращий проєкт для вивчення програмування з нуля.</p>
+                <span class="story-author">— Марія</span>
+            </div>
+            <div class="story-card">
+                <p>Ментор пояснював складні теми доступно, перевіряв завдання та давав поради. Завдяки підтримці я зрозумів Python, та знаю куди далі хочу рухатись!</p>
+                <span class="story-author">— Антон</span>
+            </div>
+            <div class="story-card">
+                <p>Вже можу писати маленькі програми швидше та якісніше. Мій логічний та алгоритмічний рівень значно покращився.</p>
+                <span class="story-author">— Андрій</span>
+            </div>
+            <div class="story-card">
+                <p>Дуже сподобався курс! Було зрозуміло як і що робити. В майбутньому я би хотіла звʼязати свій шлях з цим. Дякую!</p>
+                <span class="story-author">— Ольга</span>
+            </div>
+            <div class="story-card">
+                <p>Можу навчатися у своєму темпі — дуже зручно. Все пояснено людською мовою, мотивація зросла.</p>
+                <span class="story-author">— Олександр</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer fade-in">
+        <p>&copy; 2025 Elite Code Academy. Створено з любов'ю до коду.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/it_fata/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Insta"></a>
+            <a href="https://t.me/katyabrifli" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="TG"></a>
+            <a href="https://www.tiktok.com/@elite_code.academy" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
+        </div>
+    </footer>
+</div>
+
+<div id="chatModal">
+    <div class="modal-content">
+        <h3 style="color:#fff; margin-bottom:20px; font-family:'Montserrat';">Оберіть месенджер</h3>
+        <button onclick="openChat('telegram')" class="modal-btn" style="background:#0088cc;">Telegram</button>
+        <button onclick="openChat('whatsapp')" class="modal-btn" style="background:#25D366;">WhatsApp</button>
+        <p style="color:#888; margin-top:20px; cursor:pointer;" onclick="closeModal()">Закрити</p>
     </div>
-</section>
-
-<!-- ===== Истории наших учеников ===== -->
-<section class="student-stories">
-    <h2 class="stories-title">Історії наших учнів</h2>
-    <div class="stories-container">
-      <div class="story-card">
-        <p class="story-text">Дуже сподобався курс! Було зрозуміло як і що робити. В майбутньому я би хотіла звʼязати свій шлях з цим. Дякую!</p>
-        <span class="story-author">— Ольга</span>
-      </div>
-      <div class="story-card">
-        <p class="story-text">Вже можу писати маленькі програми швидше та якісніше. Мій логічний та алгоритмічний рівень значно покращився.</p>
-        <span class="story-author">— Андрій</span>
-      </div>
-      <div class="story-card">
-        <p class="story-text">Курс класний, Катерина допомогла розібратись з усіма задачами. Elite Code Academy — найкращий проєкт для вивчення програмування з нуля.</p>
-        <span class="story-author">— Марія</span>
-      </div>
-      <div class="story-card">
-        <p class="story-text">Можу навчатися у своєму темпі — дуже зручно. Все пояснено людською мовою, мотивація зросла.</p>
-        <span class="story-author">— Олександр</span>
-      </div>
-      <div class="story-card">
-        <p class="story-text">Ментор пояснював складні теми доступно, перевіряв завдання та давав поради. Завдяки підтримці я зрозумів Python, та знаю куди далі хочу рухатись!</p>
-        <span class="story-author">—Антон </span>
-      </div>
-    </div>
-  </section>
-  
-  <style>
-  /* ===== Стили Историй учеников ===== */
-  .student-stories {
-    width: 100%;
-    max-width: 1200px;
-    margin: 80px auto;
-    text-align: center;
-    padding: 0 20px;
-  }
-  
-  .stories-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.2em;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 40px;
-  }
-  
-  .stories-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-  }
-  
-  .story-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(200,200,200,0.4); /* серая рамка */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.7);
-    border-radius: 25px;
-    padding: 25px 20px;
-    max-width: 300px;
-    flex: 1 1 250px;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .story-card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 14px 35px rgba(0,0,0,0.8);
-  }
-  
-  .story-text {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
-    color: #fff;
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
-  
-  .story-author {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9em;
-    font-weight: 600;
-    color: #ccc;
-  }
-    
-  @media(max-width:768px){
-    .story-card { max-width: 45%; flex: 1 1 45%; }
-  }
-  
-  @media(max-width:480px){
-    .story-card { max-width: 90%; flex: 1 1 90%; }
-  }
-  </style>
-  
-
-<!-- ===== FOOTER + SOCIAL ICONS ===== -->
-<footer class="main-footer fade-in">
-    <p>&copy; 2025 Elite Code Academy. Всі права захищено.</p>
-    <p>Навчання, що відкриває нові горизонти.</p>
-
-    <!-- Соцмережі -->
-    <div class="social-links">
-        <a href="https://www.instagram.com/it_fata/" target="_blank" aria-label="Instagram">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-        </a>
-
-        <a href="https://t.me/katyabrifli" target="_blank" aria-label="Telegram">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
-        </a>
-
-        <a href="https://www.tiktok.com/@elite_code.academy?_r=1&_t=ZN-92GiinuqsIY" target="_blank" aria-label="TikTok">
-            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
-        </a>
-    </div>
-</footer>
-
-<style>
-/* ===== SOCIAL ICON STYLES ===== */
-.social-links {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
-.social-links img {
-    width: 42px;
-    height: 42px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    filter: brightness(0.9);
-}
-
-.social-links img:hover {
-    transform: scale(1.25);
-    filter: brightness(1.3);
-}
-</style>
-
 </div>
 
 <script>
-const faders = document.querySelectorAll('.fade-in');
-const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.2 });
-faders.forEach(fader => appearOnScroll.observe(fader));
+    // Intersection Observer for fade-in
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    faders.forEach(f => observer.observe(f));
+
+    // Modal logic
+    function showModal() { document.getElementById('chatModal').style.display = 'flex'; }
+    function closeModal() { document.getElementById('chatModal').style.display = 'none'; }
+    
+    function openChat(platform) {
+        let url = platform === 'telegram' ? 'https://t.me/katyabrifli' : 'https://wa.me/40725245603';
+        window.open(url, '_blank');
+        closeModal();
+    }
+
+    document.querySelectorAll('.buy-button').forEach(btn => btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showModal();
+    }));
 </script>
-<!-- Модальное окно для выбора чата -->
-<div id="chatModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
-    <div style="background:#111; padding:30px; border-radius:20px; text-align:center; max-width:300px; width:80%;">
-        <h3 style="color:#fff; margin-bottom:20px;">Обери чат</h3>
-      <button onclick="openChat('telegram')" style="margin:10px; padding:10px 20px; border-radius:10px; border:none; cursor:pointer; background:#0088cc; color:white;">Telegram</button>
-      <button onclick="openChat('whatsapp')" style="margin:10px; padding:10px 20px; border-radius:10px; border:none; cursor:pointer; background:#25D366; color:white;">WhatsApp</button>
-      <p style="color:#ccc; margin-top:15px; cursor:pointer;" onclick="closeModal()">Відміна</p>
-    </div>
-  </div>
-  
-  <script>
-  // Показываем модальное окно
-  function showModal() {
-      document.getElementById('chatModal').style.display = 'flex';
-  }
-  
-  // Закрываем модальное окно
-  function closeModal() {
-      document.getElementById('chatModal').style.display = 'none';
-  }
-  
-  // Открываем выбранный чат
-  function openChat(chat) {
-      let link = '';
-      if(chat === 'telegram') {
-          link = 'https://t.me/katyabrifli'; // замените на свой Telegram ник
-      } else if(chat === 'whatsapp') {
-          link = 'https://wa.me/40725245603'; // замените на свой номер в формате 1234567890
-      }
-      window.open(link, '_blank');
-      closeModal();
-  }
-  
-  // Назначаем всем кнопкам с классом .buy-button открытие модального окна
-  document.querySelectorAll('.buy-button').forEach(btn => {
-      btn.addEventListener('click', showModal);
-  });
-  </script>
-  
+
 </body>
 </html>
